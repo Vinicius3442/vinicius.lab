@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vinicius.lab — Jogos, Experimentos & Simulações</title>
+  <meta name="description" content="Hub de projetos e experimentos interativos na web criados por Vinícius. De simulações astrofísicas e neuroevolução a explorações oceânicas e jogos 3D.">
+  <meta name="theme-color" content="#f5f5f7">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Principal com Vibe Neal.fun -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#" class="brand-logo" id="brand-logo">
+          <span class="brand-icon">⚡</span>
+          <span class="brand-name">vinicius<span class="brand-dot">.</span>lab</span>
+        </a>
+        <span class="brand-tag">vibe neal.fun</span>
+      </div>
+
+      <nav class="header-actions">
+        <button id="random-btn" class="pill-btn highlight-btn" title="Abrir um experimento aleatório!">
+          <span class="btn-icon">🎲</span>
+          <span>Projeto Aleatório</span>
+        </button>
+        <a href="https://github.com/Vinicius3442" target="_blank" rel="noopener noreferrer" class="pill-btn github-btn" title="Perfil no GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section Minimalista e Descontraída -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Experimentos interativos, jogos & ciência na web.
+      </h1>
+      <p class="hero-subtitle">
+        Uma coleção de simulações, inteligências artificiais e experiências visuais desenvolvidas para você interagir e explorar direto no navegador.
+      </p>
+
+      <!-- Barra de Busca & Filtros de Categoria -->
+      <div class="search-filter-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="project-search" placeholder="Buscar experimento (ex: oceano, AGV, buraco negro, FPS, ordenação)..." autocomplete="off">
+          <span id="search-counter" class="search-counter">5 projetos</span>
+        </div>
+
+        <div class="filter-pills" id="filter-container">
+          <button class="filter-pill active" data-filter="all">Todos</button>
+          <button class="filter-pill" data-filter="simulacao">Simulações</button>
+          <button class="filter-pill" data-filter="ia">Inteligência Artificial</button>
+          <button class="filter-pill" data-filter="jogos">Jogos & 3D</button>
+          <button class="filter-pill" data-filter="algoritmos">Algoritmos</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Cards Estilo Neal.fun -->
+  <main class="projects-main">
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- CARD 1: DEEP BLUE -->
+      <article class="project-card card-deepblue" data-category="simulacao" data-tags="oceano mar deepblue biologia submarino scroll 11000m" data-url="https://vinicius3442.github.io/Deepblue/">
+        <div class="card-cover">
+          <!-- Animação do Oceano -->
+          <div class="ocean-skyline"></div>
+          <div class="ocean-waves">
+            <svg class="wave wave-1" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C150,90 350,-40 500,50 C650,140 900,10 1200,40 L1200,120 L0,120 Z"></path></svg>
+            <svg class="wave wave-2" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,20 C200,80 450,0 700,60 C950,120 1050,30 1200,50 L1200,120 L0,120 Z"></path></svg>
+          </div>
+          <div class="ocean-deep-gradient">
+            <div class="bubble b1"></div>
+            <div class="bubble b2"></div>
+            <div class="bubble b3"></div>
+            <div class="bubble b4"></div>
+            <div class="submarine">
+              <svg viewBox="0 0 64 36" width="54" height="30" fill="none">
+                <ellipse cx="32" cy="18" rx="26" ry="12" fill="#ffd166"/>
+                <circle cx="46" cy="18" r="4" fill="#001e3d"/>
+                <circle cx="34" cy="18" r="4" fill="#001e3d"/>
+                <circle cx="22" cy="18" r="4" fill="#001e3d"/>
+                <path d="M30 6 L30 1 L38 1 L38 6 Z" fill="#ffd166"/>
+                <path d="M6 14 L0 10 L0 26 L6 22 Z" fill="#f77f00"/>
+              </svg>
+            </div>
+            <div class="depth-gauge">
+              <span class="depth-number">11.000m</span>
+              <span class="depth-text">ABISSAL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="category-badge theme-aquatic">🌊 Oceano & Exploração</span>
+            <span class="featured-badge">Destaque</span>
+          </div>
+
+          <h2 class="card-title">Deep Blue</h2>
+          <p class="card-description">
+            Uma jornada vertical pelas profundezas do oceano, da luz solar na superfície aos 11.000 metros da Fossa das Marianas. Com bestiário interativo e criaturas raras.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Interativo</span>
+            <span class="tech-tag">Áudio 3D</span>
+            <span class="tech-tag">HTML5 Canvas</span>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://vinicius3442.github.io/Deepblue/" class="card-action-btn action-aquatic" target="_blank" rel="noopener">
+              <span>Mergulhar Agora</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/Vinicius3442/Deepblue" class="repo-link" target="_blank" rel="noopener" title="Ver código no GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2: NEUROEVOLUÇÃO DE AGV -->
+      <article class="project-card card-agv" data-category="ia" data-tags="ia redes neurais algoritmo genetico agv logistica empilhadeira simulacao" data-url="https://vinicius3442.github.io/Neuroevolucao_de_AGV/">
+        <div class="card-cover">
+          <!-- Animação Tech/Neural -->
+          <div class="tech-grid-bg"></div>
+          <div class="neural-network-viz">
+            <svg viewBox="0 0 300 140" class="neural-svg">
+              <!-- Linhas de Conexão Sináptica -->
+              <line x1="40" y1="35" x2="150" y2="40" class="synapse s1"/>
+              <line x1="40" y1="35" x2="150" y2="100" class="synapse s2"/>
+              <line x1="40" y1="70" x2="150" y2="40" class="synapse s3"/>
+              <line x1="40" y1="70" x2="150" y2="100" class="synapse s4"/>
+              <line x1="40" y1="105" x2="150" y2="70" class="synapse s5"/>
+              <line x1="150" y1="40" x2="260" y2="50" class="synapse s6"/>
+              <line x1="150" y1="70" x2="260" y2="70" class="synapse s7"/>
+              <line x1="150" y1="100" x2="260" y2="90" class="synapse s8"/>
+              
+              <!-- Nós Neurais -->
+              <circle cx="40" cy="35" r="7" class="neuron input-neuron"/>
+              <circle cx="40" cy="70" r="7" class="neuron input-neuron"/>
+              <circle cx="40" cy="105" r="7" class="neuron input-neuron"/>
+
+              <circle cx="150" cy="40" r="8" class="neuron hidden-neuron"/>
+              <circle cx="150" cy="70" r="8" class="neuron hidden-neuron"/>
+              <circle cx="150" cy="100" r="8" class="neuron hidden-neuron"/>
+
+              <circle cx="260" cy="50" r="9" class="neuron output-neuron"/>
+              <circle cx="260" cy="90" r="9" class="neuron output-neuron"/>
+            </svg>
+          </div>
+          <div class="agv-rover">
+            <div class="agv-box">📦</div>
+            <div class="agv-chassis">AGV-01</div>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="category-badge theme-neural">🧠 Inteligência Artificial</span>
+            <span class="gen-counter">Gen #184</span>
+          </div>
+
+          <h2 class="card-title">Neuroevolução de AGV</h2>
+          <p class="card-description">
+            Algoritmo genético treinando redes neurais de veículos guiados autônomos (AGVs) para coletar cargas e desviar de obstáculos em um armazém inteligente.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Algoritmo Genético</span>
+            <span class="tech-tag">Rede Neural</span>
+            <span class="tech-tag">Canvas 2D</span>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://vinicius3442.github.io/Neuroevolucao_de_AGV/" class="card-action-btn action-neural" target="_blank" rel="noopener">
+              <span>Executar IA</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/Vinicius3442/Neuroevolucao_de_AGV" class="repo-link" target="_blank" rel="noopener" title="Ver código no GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3: CYBERDEFENDER -->
+      <article class="project-card card-cyberdefender" data-category="jogos" data-tags="jogo 3d fps shooter threejs cyber cyberpunk armas waves tiro" data-url="https://vinicius3442.github.io/cyberdefender/">
+        <div class="card-cover">
+          <div class="cyber-scanlines"></div>
+          <div class="radar-circle-pulse"></div>
+          <div class="crosshair-target">
+            <div class="ch-circle"></div>
+            <div class="ch-cross horizontal"></div>
+            <div class="ch-cross vertical"></div>
+            <div class="ch-dot"></div>
+          </div>
+          <div class="cyber-hologram">
+            <span class="cyber-glitch-text" data-text="WAVE 07">WAVE 07</span>
+            <span class="cyber-status-text">HOSTILES DETECTED</span>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="category-badge theme-cyber">🎮 Jogo 3D & FPS</span>
+            <span class="tech-pill">Three.js</span>
+          </div>
+
+          <h2 class="card-title">Cyberdefender</h2>
+          <p class="card-description">
+            FPS de ação 3D em tempo real executado no navegador. Enfrente ondas de robôs sentinelas, chefes colossais, colete pontos e desbloqueie upgrades de armamento.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">WebGL / Three.js</span>
+            <span class="tech-tag">3D Physics</span>
+            <span class="tech-tag">First-Person</span>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://vinicius3442.github.io/cyberdefender/" class="card-action-btn action-cyber" target="_blank" rel="noopener">
+              <span>Jogar Partida</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/Vinicius3442/cyberdefender" class="repo-link" target="_blank" rel="noopener" title="Ver código no GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 4: ASTROPHYSICS LAB / PHYSICS BOX -->
+      <article class="project-card card-astrophysics" data-category="simulacao" data-tags="astrofisica fisica espaco buraco negro galaxia pulsar kepler cosmos simulacao" data-url="https://vinicius3442.github.io/astrophysics-lab/">
+        <div class="card-cover">
+          <div class="cosmos-stars"></div>
+          <div class="black-hole-sim">
+            <div class="accretion-disc"></div>
+            <div class="event-horizon"></div>
+            <div class="gravitational-lens"></div>
+          </div>
+          <div class="orbit-system">
+            <div class="orbit-path-el"></div>
+            <div class="orbit-satellite"></div>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="category-badge theme-cosmic">🌌 Astrofísica & Cosmos</span>
+            <span class="tech-pill">Simulação Real</span>
+          </div>
+
+          <h2 class="card-title">Physics Box (Astrofísica)</h2>
+          <p class="card-description">
+            Laboratório astrofísico com modelos matemáticos de órbitas keplerianas, evolução estelar, pulsares relativísticos, lentes de buracos negros e galáxias espirais.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Mecânica Celeste</span>
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">Cálculo Numérico</span>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://vinicius3442.github.io/astrophysics-lab/" class="card-action-btn action-cosmic" target="_blank" rel="noopener">
+              <span>Explorar o Cosmos</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/Vinicius3442/astrophysics-lab" class="repo-link" target="_blank" rel="noopener" title="Ver código no GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 5: ALGORITMOS DE ORDENAMENTO -->
+      <article class="project-card card-sorting" data-category="algoritmos" data-tags="algoritmos ordenacao sorting quicksort mergesort bubble visualizador ciencia computacao" data-url="https://pietro-renno.github.io/Algoritmos-de-Ordenamento/">
+        <div class="card-cover">
+          <div class="sorting-chart-preview" id="sorting-bars-container">
+            <div class="sort-bar" style="height: 25%; background: #ff595e;"></div>
+            <div class="sort-bar" style="height: 65%; background: #ffca3a;"></div>
+            <div class="sort-bar" style="height: 40%; background: #8ac926;"></div>
+            <div class="sort-bar" style="height: 90%; background: #1982c4;"></div>
+            <div class="sort-bar" style="height: 35%; background: #6a4c93;"></div>
+            <div class="sort-bar" style="height: 75%; background: #ff595e;"></div>
+            <div class="sort-bar" style="height: 50%; background: #ffca3a;"></div>
+            <div class="sort-bar" style="height: 85%; background: #8ac926;"></div>
+            <div class="sort-bar" style="height: 20%; background: #1982c4;"></div>
+            <div class="sort-bar" style="height: 60%; background: #6a4c93;"></div>
+            <div class="sort-bar" style="height: 95%; background: #ff595e;"></div>
+            <div class="sort-bar" style="height: 30%; background: #ffca3a;"></div>
+            <div class="sort-bar" style="height: 70%; background: #8ac926;"></div>
+            <div class="sort-bar" style="height: 45%; background: #1982c4;"></div>
+            <div class="sort-bar" style="height: 80%; background: #6a4c93;"></div>
+          </div>
+          <div class="sorting-overlay-badge">
+            <span class="sort-algo-tag">QuickSort • O(n log n)</span>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="category-badge theme-sorting">⚡ Algoritmos & Computação</span>
+            <span class="tech-pill">Turbo Limonations</span>
+          </div>
+
+          <h2 class="card-title">Sorting Visualizer</h2>
+          <p class="card-description">
+            Visualizador interativo de algoritmos clássicos de ordenação (Bubble, Insertion, Selection, Merge e QuickSort) em canvas com taxa de atualização ajustável.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Estruturas de Dados</span>
+            <span class="tech-tag">Algoritmos</span>
+            <span class="tech-tag">Canvas 2D</span>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://pietro-renno.github.io/Algoritmos-de-Ordenamento/" class="card-action-btn action-sorting" target="_blank" rel="noopener">
+              <span>Visualizar Algoritmos</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://github.com/pietro-renno/Algoritmos-de-Ordenamento" class="repo-link" target="_blank" rel="noopener" title="Ver código no GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Feedback caso nenhum projeto seja encontrado na busca -->
+    <div id="no-results" class="no-results-msg" style="display: none;">
+      <span class="no-results-icon">🔍</span>
+      <h3>Nenhum projeto encontrado</h3>
+      <p>Tente buscar por outro termo ou clique em "Todos".</p>
+      <button id="clear-search-btn" class="pill-btn highlight-btn">Limpar busca</button>
+    </div>
+  </main>
+
+  <!-- Rodapé Estilo Neal.fun -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">vinicius<span>.</span>lab</div>
+        <p>Inspirado na criatividade sem limites da web moderna & neal.fun.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/Vinicius3442" target="_blank" rel="noopener">GitHub: @Vinicius3442</a>
+        <span>•</span>
+        <a href="#top" id="back-to-top">Voltar ao Topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
