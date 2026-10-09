@@ -814,12 +814,19 @@ body {
 }
 
 .category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--border-dark);
+}
+
+.category-badge .badge-icon {
+  flex-shrink: 0;
 }
 
 .theme-aquatic { background: #e0f2fe; color: #0369a1; }
@@ -969,9 +976,10 @@ body {
 }
 
 .no-results-icon {
-  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
-  display: block;
 }
 
 .no-results-msg h3 {
