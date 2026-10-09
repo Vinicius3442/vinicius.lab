@@ -337,88 +337,21 @@ body {
   border-bottom: 2.5px solid var(--border-dark);
 }
 
-/* --- TEMA 1: DEEP BLUE (AQUÁTICO) --- */
+/* --- TEMA 1: DEEP BLUE (AQUÁTICO — CANVAS) --- */
 .card-deepblue .card-cover {
-  background: linear-gradient(180deg, #3a86ff 0%, #00509d 35%, #00296b 70%, #000814 100%);
+  background: #000814;
 }
 
-.ocean-skyline {
+.deepblue-canvas-cover {
+  position: relative;
+}
+
+.deepblue-canvas {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 35px;
-  background: linear-gradient(180deg, #90e0ef 0%, #3a86ff 100%);
-}
-
-.ocean-waves {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  width: 200%;
-  height: 30px;
-}
-
-.wave {
-  position: absolute;
   width: 100%;
   height: 100%;
-  fill: rgba(255, 255, 255, 0.4);
-}
-
-.wave-1 {
-  animation: waveMove 10s linear infinite;
-}
-
-.wave-2 {
-  top: 6px;
-  fill: #0077b6;
-  animation: waveMove 6s linear infinite reverse;
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.ocean-deep-gradient {
-  position: absolute;
-  inset: 0;
-}
-
-.bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.6);
-  animation: bubbleRise 4s infinite ease-in;
-}
-
-.b1 { width: 14px; height: 14px; left: 15%; bottom: -20px; animation-duration: 4.5s; }
-.b2 { width: 8px; height: 8px; left: 35%; bottom: -20px; animation-duration: 3.5s; animation-delay: 1.2s; }
-.b3 { width: 18px; height: 18px; left: 70%; bottom: -20px; animation-duration: 5s; animation-delay: 0.5s; }
-.b4 { width: 10px; height: 10px; left: 85%; bottom: -20px; animation-duration: 3.8s; animation-delay: 2s; }
-
-@keyframes bubbleRise {
-  0% { transform: translateY(0) scale(0.8); opacity: 0; }
-  20% { opacity: 0.8; }
-  100% { transform: translateY(-220px) scale(1.2); opacity: 0; }
-}
-
-.submarine {
-  position: absolute;
-  bottom: 45px;
-  left: -60px;
-  animation: subPatrol 12s linear infinite;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
-}
-
-@keyframes subPatrol {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(450px, -15px); }
-  50.01% { transform: translate(450px, -15px) scaleX(-1); }
-  100% { transform: translate(0, 0) scaleX(-1); }
 }
 
 .depth-gauge {
@@ -463,56 +396,13 @@ body {
     linear-gradient(to bottom, rgba(48, 54, 61, 0.4) 1px, transparent 1px);
 }
 
-.neural-network-viz {
+.neural-canvas {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.neural-svg {
-  width: 90%;
-  height: 80%;
-}
-
-.synapse {
-  stroke: rgba(88, 166, 255, 0.3);
-  stroke-width: 1.5;
-  stroke-dasharray: 4, 4;
-  animation: synapsePulse 3s linear infinite;
-}
-
-@keyframes synapsePulse {
-  0% { stroke-dashoffset: 16; }
-  100% { stroke-dashoffset: 0; }
-}
-
-.neuron {
-  stroke-width: 2;
-  transition: all 0.3s ease;
-}
-
-.input-neuron {
-  fill: #161b22;
-  stroke: #58a6ff;
-}
-
-.hidden-neuron {
-  fill: #161b22;
-  stroke: #ffcc00;
-  animation: neuronGlow 2s infinite alternate;
-}
-
-.output-neuron {
-  fill: #00ff41;
-  stroke: #00ff41;
-  filter: drop-shadow(0 0 6px #00ff41);
-}
-
-@keyframes neuronGlow {
-  0% { fill: #161b22; stroke: #ffcc00; }
-  100% { fill: #ffcc00; stroke: #fff; filter: drop-shadow(0 0 8px #ffcc00); }
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .agv-rover {
@@ -640,105 +530,21 @@ body {
 }
 
 
-/* --- TEMA 4: ASTROPHYSICS LAB (CÓSMICO & BURACO NEGRO) --- */
+/* --- TEMA 4: ASTROPHYSICS LAB (BURACO NEGRO — CANVAS) --- */
 .card-astrophysics .card-cover {
-  background: radial-gradient(circle at center, #1b0933 0%, #080312 80%, #030107 100%);
-}
-
-.cosmos-stars {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 100px 80px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 170px 40px, #e0aaff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 240px 120px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 300px 50px, #c77dff, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 70px 150px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 320px 160px, #ffd166, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 350px 200px;
-}
-
-.black-hole-sim {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.accretion-disc {
-  position: absolute;
-  width: 110px;
-  height: 40px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, #ff9e00 0%, #ff5400 40%, rgba(255, 0, 110, 0.4) 70%, transparent 100%);
-  filter: blur(3px);
-  animation: discSpin 8s linear infinite;
-  transform: rotate(-25deg);
-}
-
-@keyframes discSpin {
-  0% { transform: rotate(-25deg) scale(1); }
-  50% { transform: rotate(-25deg) scale(1.08); }
-  100% { transform: rotate(-25deg) scale(1); }
-}
-
-.event-horizon {
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
   background: #000;
-  box-shadow: 0 0 15px rgba(255, 158, 0, 0.8), inset 0 0 5px #000;
 }
 
-.gravitational-lens {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
-  pointer-events: none;
+.bh-canvas-cover {
+  position: relative;
 }
 
-.orbit-system {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 220px;
-  height: 90px;
-  transform: translate(-50%, -50%) rotate(-15deg);
-}
-
-.orbit-path-el {
-  width: 100%;
-  height: 100%;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
-.orbit-satellite {
+.blackhole-canvas {
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background: #4cc9f0;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #4cc9f0;
-  animation: orbitTravel 6s linear infinite;
-}
-
-@keyframes orbitTravel {
-  0% { offset-distance: 0%; transform: rotate(0deg) translate(110px) rotate(0deg); }
-  100% { offset-distance: 100%; transform: rotate(360deg) translate(110px) rotate(-360deg); }
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* --- TEMA 5: SORTING VISUALIZER (ALGORÍTMICO) --- */
@@ -781,6 +587,48 @@ body {
   font-size: 0.75rem;
   color: #ffca3a;
   font-weight: 600;
+}
+
+/* ==========================================================================
+   COLLABORATORS ROW
+   ========================================================================== */
+
+.collaborators-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.collab-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.collab-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: #f0f7ff;
+  border: 1.5px solid #bee3f8;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.collab-chip:hover {
+  background: #bee3f8;
+  border-color: #3182ce;
+  color: #1a365d;
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
