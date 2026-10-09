@@ -539,118 +539,106 @@ body {
   color: #ffcc00;
 }
 
-/* --- TEMA 3: CYBERDEFENDER (FPS 3D & NEON) --- */
+/* --- TEMA 3: CYBERDEFENDER (ROBÔ CYBER PROTOCOL COM OLHOS INTERATIVOS) --- */
 .card-cyberdefender .card-cover {
-  background: radial-gradient(circle at center, #180d2b 0%, #07070e 100%);
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyber-robot-cover {
+  cursor: crosshair;
 }
 
 .cyber-scanlines {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.5) 50%);
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.45) 50%);
   background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.cyber-face-header {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
   pointer-events: none;
 }
 
-.radar-circle-pulse {
+.cyber-title-mini {
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.15rem;
+  color: #4af626;
+  text-shadow: 0 0 10px #4af626, 0 0 25px rgba(0, 255, 0, 0.6);
+  letter-spacing: 5px;
+  animation: cyberTitleGlow 3s infinite alternate;
+}
+
+@keyframes cyberTitleGlow {
+  0% { opacity: 0.85; text-shadow: 0 0 10px #4af626; }
+  100% { opacity: 1; text-shadow: 0 0 20px #4af626, 0 0 35px #00ff00; }
+}
+
+.cyber-robot-canvas {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140px;
-  height: 140px;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  border-radius: 50%;
-  animation: radarPulse 2.5s infinite ease-out;
-}
-
-@keyframes radarPulse {
-  0% { transform: translate(-50%, -50%) scale(0.6); opacity: 1; }
-  100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
-}
-
-.crosshair-target {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  transition: transform 0.2s ease;
-}
-
-.project-card.card-cyberdefender:hover .crosshair-target {
-  transform: translate(-50%, -50%) scale(1.2) rotate(45deg);
-}
-
-.ch-circle {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border: 2px dashed #00f3ff;
-  border-radius: 50%;
-  animation: chSpin 10s linear infinite;
+  z-index: 2;
+  pointer-events: none;
 }
 
-@keyframes chSpin {
-  100% { transform: rotate(360deg); }
-}
-
-.ch-cross {
+.cyber-menu-mouth {
   position: absolute;
-  background: #ff0055;
-}
-
-.ch-cross.horizontal {
-  top: 50%;
-  left: -8px;
-  right: -8px;
-  height: 2px;
-  transform: translateY(-50%);
-}
-
-.ch-cross.vertical {
-  left: 50%;
-  top: -8px;
-  bottom: -8px;
-  width: 2px;
-  transform: translateX(-50%);
-}
-
-.ch-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: #ff0055;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 8px #ff0055;
-}
-
-.cyber-hologram {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  display: flex;
-  flex-direction: column;
-}
-
-.cyber-glitch-text {
-  font-family: var(--font-heading);
+  bottom: 32px;
+  right: 44%;
+  font-family: 'Courier New', monospace;
+  font-size: 26px;
+  color: #4af626;
   font-weight: 700;
-  font-size: 0.95rem;
-  color: #ff0055;
-  text-shadow: 0 0 8px rgba(255, 0, 85, 0.7);
-  letter-spacing: 0.1em;
+  transform: rotate(90deg);
+  text-shadow: 0 0 10px #4af626;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.9;
+  animation: mouthIdleBob 2s infinite ease-in-out;
 }
 
-.cyber-status-text {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: #00f3ff;
-  letter-spacing: 0.05em;
+@keyframes mouthIdleBob {
+  0%, 100% { transform: rotate(90deg) translateX(0); }
+  50% { transform: rotate(90deg) translateX(3px); }
 }
+
+.cyber-wake-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #4af626;
+  letter-spacing: 2px;
+  z-index: 5;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.project-card.card-cyberdefender:hover .cyber-wake-hint {
+  opacity: 1;
+  text-shadow: 0 0 8px #4af626;
+}
+
 
 /* --- TEMA 4: ASTROPHYSICS LAB (CÓSMICO & BURACO NEGRO) --- */
 .card-astrophysics .card-cover {
@@ -831,7 +819,7 @@ body {
 
 .theme-aquatic { background: #e0f2fe; color: #0369a1; }
 .theme-neural { background: #dcfce7; color: #15803d; }
-.theme-cyber { background: #fce7f3; color: #be185d; }
+.theme-cyber { background: #03210d; color: #4af626; border-color: #4af626; }
 .theme-cosmic { background: #f3e8ff; color: #7e22ce; }
 .theme-sorting { background: #fef3c7; color: #b45309; }
 
@@ -917,8 +905,8 @@ body {
 .action-neural { background: #4ade80; }
 .action-neural:hover { background: #22c55e; color: #fff; }
 
-.action-cyber { background: #f43f5e; color: #fff; }
-.action-cyber:hover { background: #e11d48; }
+.action-cyber { background: #4af626; color: #000; font-weight: 700; }
+.action-cyber:hover { background: #35d414; box-shadow: 0 5px 0 var(--border-dark), 0 0 16px rgba(74, 246, 38, 0.5); }
 
 .action-cosmic { background: #c084fc; color: #fff; }
 .action-cosmic:hover { background: #a855f7; }

@@ -160,4 +160,99 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dispara a cada 6 segundos automaticamente
     setInterval(shuffleAndSortBars, 6000);
   }
+
+  // --- 4. ROBÔ CYBERDEFENDER (OLHOS QUE SEGUEM O MOUSE E PISCAM) ---
+  const cyberCanvas = document.getElementById('cyber-robot-canvas');
+  if (cyberCanvas) {
+    const ctx = cyberCanvas.getContext('2d');
+    let eyeTargetX = 0;
+    let eyeTargetY = 0;
+    let currentEyeX = 0;
+    let currentEyeY = 0;
+    let blinkTimer = 0;
+
+    function resizeCyberCanvas() {
+      const rect = cyberCanvas.parentElement.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        cyberCanvas.width = rect.width;
+        cyberCanvas.height = rect.height;
+      }
+    }
+
+    resizeCyberCanvas();
+    window.addEventListener('resize', resizeCyberCanvas);
+
+    // Rastreia a posição do mouse em relação ao card
+    window.addEventListener('mousemove', (e) => {
+      const rect = cyberCanvas.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      const dx = (e.clientX - cx) / Math.max(300, window.innerWidth / 3);
+      const dy = (e.clientY - cy) / Math.max(200, window.innerHeight / 3);
+
+      eyeTargetX = Math.max(-1, Math.min(1, dx));
+      eyeTargetY = Math.max(-1, Math.min(1, dy));
+    });
+
+    // Ao retirar o mouse da tela, centraliza os olhos
+    document.addEventListener('mouseleave', () => {
+      eyeTargetX = 0;
+      eyeTargetY = 0;
+    });
+
+    function drawRobotFace() {
+      requestAnimationFrame(drawRobotFace);
+
+      const w = cyberCanvas.width;
+      const h = cyberCanvas.height;
+      if (w === 0 || h === 0) return;
+
+      // Fundo preto absoluto
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, w, h);
+
+      // Piscar aleatório (idêntico à lógica do Cyberdefender)
+      if (Math.random() < 0.012 && blinkTimer <= 0) {
+        blinkTimer = 10;
+      }
+      if (blinkTimer > 0) {
+        blinkTimer--;
+      }
+
+      // Interpolação suave dos olhos (lerp)
+      currentEyeX += (eyeTargetX - currentEyeX) * 0.12;
+      currentEyeY += (eyeTargetY - currentEyeY) * 0.12;
+
+      // Dimensões dos olhos do robô no card
+      const baseEyeW = 44;
+      const baseEyeH = 44;
+      const eyeH = blinkTimer > 0 ? 4 : baseEyeH;
+
+      const offsetX = currentEyeX * 16;
+      const offsetY = currentEyeY * 12;
+
+      const centerY = h / 2 - 2;
+      const centerX = w / 2;
+
+      // Configuração de brilho verde Matrix
+      ctx.fillStyle = '#4af626';
+      ctx.shadowBlur = 18;
+      ctx.shadowColor = '#4af626';
+
+      // Olho Esquerdo
+      const leftEyeX = centerX - 58 + offsetX;
+      const eyeY = centerY - baseEyeH / 2 + offsetY + (baseEyeH - eyeH) / 2;
+      ctx.fillRect(leftEyeX, eyeY, baseEyeW, eyeH);
+
+      // Olho Direito
+      const rightEyeX = centerX + 14 + offsetX;
+      ctx.fillRect(rightEyeX, eyeY, baseEyeW, eyeH);
+
+      ctx.shadowBlur = 0;
+    }
+
+    drawRobotFace();
+  }
 });
+

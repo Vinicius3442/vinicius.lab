@@ -13,7 +13,7 @@
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -85,7 +85,7 @@
     </div>
   </section>
 
-  <!-- Grid de Cards Estilo Neal.fun -->
+  <!-- Grid de Cards-->
   <main class="projects-main">
     <div class="projects-grid" id="projects-grid">
 
@@ -226,21 +226,16 @@
         </div>
       </article>
 
-      <!-- CARD 3: CYBERDEFENDER -->
-      <article class="project-card card-cyberdefender" data-category="jogos" data-tags="jogo 3d fps shooter threejs cyber cyberpunk armas waves tiro" data-url="https://vinicius3442.github.io/cyberdefender/">
-        <div class="card-cover">
+      <!-- CARD 3: CYBERDEFENDER (DESIGN DO ROBÔ DA HOME COM OLHOS INTERATIVOS) -->
+      <article class="project-card card-cyberdefender" data-category="jogos" data-tags="jogo 3d fps shooter threejs cyber cyberpunk armas waves tiro robô protocol" data-url="https://vinicius3442.github.io/cyberdefender/">
+        <div class="card-cover cyber-robot-cover" id="cyber-cover">
           <div class="cyber-scanlines"></div>
-          <div class="radar-circle-pulse"></div>
-          <div class="crosshair-target">
-            <div class="ch-circle"></div>
-            <div class="ch-cross horizontal"></div>
-            <div class="ch-cross vertical"></div>
-            <div class="ch-dot"></div>
+          <div class="cyber-face-header">
+            <span class="cyber-title-mini">CYBER PROTOCOL</span>
           </div>
-          <div class="cyber-hologram">
-            <span class="cyber-glitch-text" data-text="WAVE 07">WAVE 07</span>
-            <span class="cyber-status-text">HOSTILES DETECTED</span>
-          </div>
+          <canvas id="cyber-robot-canvas" class="cyber-robot-canvas"></canvas>
+          <div class="cyber-menu-mouth">)</div>
+          <div class="cyber-wake-hint">[ CLICK TO WAKE ]</div>
         </div>
 
         <div class="card-content">
@@ -353,7 +348,7 @@
               <svg class="badge-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
               <span>Algoritmos & Computação</span>
             </span>
-            <span class="tech-pill">Turbo Limonations</span>
+            <span class="tech-pill">Bubble sort</span>
           </div>
 
           <h2 class="card-title">Sorting Visualizer</h2>
@@ -395,12 +390,10 @@
     </div>
   </main>
 
-  <!-- Rodapé Estilo Neal.fun -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-left">
         <div class="footer-logo">vinicius<span>.</span>lab</div>
-        <p>Inspirado na criatividade sem limites da web moderna & neal.fun.</p>
       </div>
 
       <div class="footer-links">
